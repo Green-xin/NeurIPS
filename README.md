@@ -1,13 +1,14 @@
 # NeurIPS
 Data Analysis
 
-After establishing an aggressive driving behavior recognition model based on K-means clustering, the designed recognition model was used to simulate the NGSIM (Next Generation Simulation) vehicle trajectory dataset, and the original data was preprocessed firstly. Then, according to the speed and acceleration of the vehicle trajectory, the feature extraction was carried out on the preprocessed data, and the principal component analysis method was used to extract the principal component of the data, so as to realize the dimensionality reduction of the features. Finally, the aggressive driving behavior recognition model based on K-means clustering was used to cluster the dimensionally reduced principal components, and the simulation results after clustering were analyzed.
 
 Trajectory data analysis
+
 Vehicle trajectory data refers to the data that describes the path and state of the vehicle's movement, including the position, velocity, acceleration and other related motion parameters of the vehicle over a period of time. Vehicle trajectory data is typically collected and recorded through vehicle sensors or other traffic monitoring devices such as traffic cameras or radar. This section begins with a detailed explanation of NGSIM and then pre-processes the raw data of the NGSIM dataset. Vehicle trajectory data refers to the data that describes the path and state of the vehicle's movement, including the position, velocity, acceleration and other related motion parameters of the vehicle over a period of time. Vehicle trajectory data is typically collected and recorded through vehicle sensors or other traffic monitoring devices such as traffic cameras or radar. This section begins with a detailed explanation of NGSIM and then pre-processes the raw data of the NGSIM dataset.
 
 Dataset Analysis
-	In this paper, aggressive driving behavior recognition is carried out using the NGSIM dataset, a large-scale traffic data collection project funded by the American Traffic Management Research Program. The dataset provides high-quality traffic trajectory data for use in areas such as traffic flow analysis, traffic simulation, and driving behavior research.
+
+In this paper, aggressive driving behavior recognition is carried out using the NGSIM dataset, a large-scale traffic data collection project funded by the American Traffic Management Research Program. The dataset provides high-quality traffic trajectory data for use in areas such as traffic flow analysis, traffic simulation, and driving behavior research.
 NGSIM datasets are collected by using video cameras and radar sensors. During the acquisition process, video cameras are used to record traffic scenes, capturing the vehicle's movement trajectory and behavior. At the same time, radar sensors are used to measure information such as the speed and position of vehicles. Together, these collection devices provide accurate and detailed traffic trajectory data. The data is presented in a CSV file, and the meanings of each field in the file are shown in Table 3.1.
 
 Trajectory data preprocessing
@@ -17,7 +18,7 @@ The data collected vehicle information in four areas, and in order to ensure the
 In the process of data collection, the vehicle may stop, resulting in the presence of multiple segments of driving data in the vehicle. The driver of the same vehicle will not change on the road, that is, the driver of the same vehicle has the same driving style, so the longest period of multi-segment driving is selected as the driving data of the current vehicle.
 According to the above data preprocessing process, 3109 vehicle trajectory data samples are sorted out, taking a sample as an example, the vehicle speed and acceleration monitoring data are shown in Figure 1.
 
-
+Figure 1
 ![2](https://github.com/Green-xin/NeurIPS/assets/173121166/a86dc76c-0cae-495e-89c9-018500d660a5)
 
 
