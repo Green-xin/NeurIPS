@@ -9,7 +9,7 @@ Vehicle trajectory data refers to the data that describes the path and state of 
 Dataset Analysis
 
 In this paper, aggressive driving behavior recognition is carried out using the NGSIM dataset, a large-scale traffic data collection project funded by the American Traffic Management Research Program. The dataset provides high-quality traffic trajectory data for use in areas such as traffic flow analysis, traffic simulation, and driving behavior research.
-NGSIM datasets are collected by using video cameras and radar sensors. During the acquisition process, video cameras are used to record traffic scenes, capturing the vehicle's movement trajectory and behavior. At the same time, radar sensors are used to measure information such as the speed and position of vehicles. Together, these collection devices provide accurate and detailed traffic trajectory data. The data is presented in a CSV file, and the meanings of each field in the file are shown in Table 3.1.
+NGSIM datasets are collected by using video cameras and radar sensors. During the acquisition process, video cameras are used to record traffic scenes, capturing the vehicle's movement trajectory and behavior. At the same time, radar sensors are used to measure information such as the speed and position of vehicles. Together, these collection devices provide accurate and detailed traffic trajectory data. 
 
 Trajectory data preprocessing
 The acquired NGSIM dataset was last updated on March 9, 2022, with more than 11.85 million samples and 24 fields. In the aggressive driving behavior, the main focus is on the speed and acceleration of the driving vehicle, so the vehicle identification number, timestamp, global abscissa and ordinate of the vehicle, instantaneous vehicle speed, instantaneous acceleration of the vehicle and highway name were selected as the experimental data.
@@ -39,8 +39,8 @@ Step 2: Calculate the covariance matrix of the normalized data, which describes 
 Step 3: Decompose the eigenvalues of the covariance matrix to obtain the eigenvalues and corresponding eigenvectors. The eigenvector represents the direction of the new coordinate system, while the eigenvalues represent the magnitude of the variance of the data in those directions.
 Step 4: According to the size of the eigenvalues, select the most important k eigenvectors as the principal components, where k is the target dimension to be reduced.
 Step 5: Project the normalized raw data onto the selected principal components to obtain the reduced data.
-PCA was used to reduce the dimensionality of aggressive driving behavior feature data, and the variance, contribution rate and cumulative contribution rate of each feature were obtained, as shown in Table 3.3.
-From the cumulative contribution rate in Table 4.3, it can be seen that the cumulative contribution rate of PC1, PC2 and PC3 to the data reaches 87%, so PC1, PC2 and PC3 are used as the principal components of aggressive driving behavior recognition, that is, the input of the clustering model.
+PCA was used to reduce the dimensionality of aggressive driving behavior feature data, and the variance, contribution rate and cumulative contribution rate of each feature were obtained.
+From the cumulative contribution rate, it can be seen that the cumulative contribution rate of PC1, PC2 and PC3 to the data reaches 87%, so PC1, PC2 and PC3 are used as the principal components of aggressive driving behavior recognition, that is the input of the clustering model.
 
 
 Aiming at the principal component features after dimensionality reduction, K-means clustering was used to identify aggressive driving behaviors. In this section, the number of clusters is determined by the elbow rule, then the principal components of the trajectory data are clustered by the K-means clustering method, and finally the contour coefficient is used to evaluate whether the clustering is reasonable.
